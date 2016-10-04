@@ -9,7 +9,7 @@
 //you can use the AT Command(AT+IPR=9600) to set it through SerialDebug
 #define BAUDRATE  9600
 
-char http_cmd[] = "GET 18298/channels?apiKey=d784b68c-79e1-11e6-baf1-67ef44625fac HTTP/1.0\r\n\r\n";
+char http_cmd[] = "GET /services/data/v37.0/sobjects/box__c/a0JA000000cqLGqMAM?boxStage__c=full HTTP/1.0\r\n\r\n";
 char buffer[512];
 GPRS gprs(PIN_TX, PIN_RX, BAUDRATE);
 void setup(){
