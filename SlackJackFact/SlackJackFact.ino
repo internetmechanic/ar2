@@ -9,7 +9,7 @@
 //you can use the AT Command(AT+IPR=9600) to set it through SerialDebug
 #define BAUDRATE  9600
 
-char http_cmd[] = "PUT /devices/aeaa6c6ee506cf798b7361724d89b7ef X-M2X-KEY: f4f7483b590440a030cb4a4d7b0c5393 Content-Type: application/json" ;
+char http_cmd[] = "PUT devices/aeaa6c6ee506cf798b7361724d89b7ef/streams/stage/value X-M2X-KEY: f4f7483b590440a030cb4a4d7b0c5393 Content-Type: application/json" ;
 char buffer[512];
 GPRS gprs(PIN_TX, PIN_RX, BAUDRATE);
 void setup(){
@@ -30,7 +30,7 @@ void setup(){
   Serial.print("IP Address is ");
   Serial.println(gprs.getIPAddress());
 
-  if(!gprs.connect(TCP,"api-m2x.att.com/v2/devices/aeaa6c6ee506cf798b7361724d89b7ef/streams/stage/value", 80)) {
+  if(!gprs.connect(TCP,"api-m2x.att.com/v2/", 80)) {
       Serial.println("connect error");
   }else{
       Serial.println("connect m3x success");
