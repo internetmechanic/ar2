@@ -30,7 +30,7 @@ void setup(){
   Serial.print("IP Address is ");
   Serial.println(gprs.getIPAddress());
 
-  if(!gprs.connect(TCP,"api.aerframe.aeris.com/notificationchannel/v2/", 80)) {
+  if(!gprs.connect(TCP,"API.SALESFORCE.COM", 80)) {
       Serial.println("connect error");
   }else{
       Serial.println("connect aeris success");
