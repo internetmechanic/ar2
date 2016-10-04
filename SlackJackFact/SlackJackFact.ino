@@ -9,7 +9,7 @@
 //you can use the AT Command(AT+IPR=9600) to set it through SerialDebug
 #define BAUDRATE  9600
 
-char http_cmd[] = "GET /services/data/v37.0/sobjects/box__c/a0JA000000cqLGqMAM?boxStage__c=full HTTP/1.0\r\n\r\n";
+char http_cmd[] = "GET /devices/aeaa6c6ee506cf798b7361724d89b7ef HTTP/1.0\r\n\r\n";
 char buffer[512];
 GPRS gprs(PIN_TX, PIN_RX, BAUDRATE);
 void setup(){
@@ -30,10 +30,10 @@ void setup(){
   Serial.print("IP Address is ");
   Serial.println(gprs.getIPAddress());
 
-  if(!gprs.connect(TCP,"API.SALESFORCE.COM", 80)) {
+  if(!gprs.connect(TCP,"api-m2x.att.com/v2", 80)) {
       Serial.println("connect error");
   }else{
-      Serial.println("connect aeris success");
+      Serial.println("connect m3x success");
   }
 
   Serial.println("waiting to fetch...");
