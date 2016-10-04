@@ -9,7 +9,7 @@
 //you can use the AT Command(AT+IPR=9600) to set it through SerialDebug
 #define BAUDRATE  9600
 
-char http_cmd[] = "PUT /devices/aeaa6c6ee506cf798b7361724d89b7ef X-M2X-KEY: f4f7483b590440a030cb4a4d7b0c5393" "Content-Type: application/json" -d "{ \"value\": \"full\" }" ;
+char http_cmd[] = "PUT /devices/aeaa6c6ee506cf798b7361724d89b7ef X-M2X-KEY: f4f7483b590440a030cb4a4d7b0c5393 Content-Type: application/json" "{ \"value\": \"full\" }" ;
 char buffer[512];
 GPRS gprs(PIN_TX, PIN_RX, BAUDRATE);
 void setup(){
